@@ -89,7 +89,7 @@ date_time_to_tsp <- function(x, freq = NULL) {
     z <- tsp(ts(x, frequency = freq, start = start)) # a bit inefficient
   } else {
     # this should be able to deal with Date and POSIXct.
-    str <- .mapdiff[freq == frequency]$string
+    str <- .mapdiff[freq == freq]$string
     if (length(str) == 0) stop("cannot deal with frequency: ", frequency)
 
     start.time <- first_time_of_year(x[1])
